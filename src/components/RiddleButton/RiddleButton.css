@@ -1,0 +1,15 @@
+.RiddleButton button {
+    margin: 5px 0;
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #fa923f;
+    background-color: transparent;
+    color: #fa923f;
+    cursor: pointer;
+}
+
+.RiddleButton button:hover,
+.RiddleButton button:active {
+    color: white;
+    background-color: #fa923f;
+}
