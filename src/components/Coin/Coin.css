@@ -6,8 +6,8 @@
 .Coin {
     position: relative;
     margin: 0 auto;
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     cursor: pointer;
     perspective: 1000px;
     background-color: transparent;
@@ -33,7 +33,7 @@
     position: absolute;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    background-size: 140px 140px;
+    background-size: 180px 180px;
 }
 
 .Coin .side-front {

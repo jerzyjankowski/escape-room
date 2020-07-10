@@ -52,6 +52,38 @@ class RiddleManager extends Component {
                         options={['friends-0.png', 'friends-1.png', 'friends-2.png', 'friends-3.png', 'friends-4.png', 'friends-5.png']}
                     />
                 </Route>
+                {/*8.0) movie year*/}
+                <Route path="/ZmlsbTA" exact component={RiddleFour}>
+                    <RiddleFour
+                        coins="4"
+                        image="movie-year-0.gif"
+                        options={['number-0.png', 'number-1.png', 'number-2.png', 'number-3.png', 'number-4.png', 'number-5.png', 'number-6.png', 'number-7.png', 'number-8.png', 'number-9.png']}
+                    />
+                </Route>
+                {/*8.1) movie year*/}
+                <Route path="/ZmlsbTE" exact component={RiddleFour}>
+                    <RiddleFour
+                        coins="4"
+                        image="movie-year-1.gif"
+                        options={['number-0.png', 'number-1.png', 'number-2.png', 'number-3.png', 'number-4.png', 'number-5.png', 'number-6.png', 'number-7.png', 'number-8.png', 'number-9.png']}
+                    />
+                </Route>
+                {/*8.2) movie year*/}
+                <Route path="/ZmlsbTI" exact component={RiddleFour}>
+                    <RiddleFour
+                        coins="4"
+                        image="movie-year-2.gif"
+                        options={['number-0.png', 'number-1.png', 'number-2.png', 'number-3.png', 'number-4.png', 'number-5.png', 'number-6.png', 'number-7.png', 'number-8.png', 'number-9.png']}
+                    />
+                </Route>
+                {/*8.3) movie year*/}
+                <Route path="/ZmlsbTM" exact component={RiddleFour}>
+                    <RiddleFour
+                        coins="4"
+                        image="movie-year-3.gif"
+                        options={['number-0.png', 'number-1.png', 'number-2.png', 'number-3.png', 'number-4.png', 'number-5.png', 'number-6.png', 'number-7.png', 'number-8.png', 'number-9.png']}
+                    />
+                </Route>
                 {/*9) olejki*/}
                 <Route path="/b2xlago" exact component={RiddleFour}>
                     <RiddleFour

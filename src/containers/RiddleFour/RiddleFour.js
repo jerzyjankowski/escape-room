@@ -6,7 +6,7 @@ import RiddleButton from "../../components/RiddleButton/RiddleButton";
 class RiddleFour extends Component {
 
     state = {
-        solution: [0, 0, 0, 0]
+        solution: [0, 0, 0, 0, 0, 0]
     };
 
     constructor(props) {

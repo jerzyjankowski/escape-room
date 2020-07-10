@@ -29,7 +29,7 @@ class RiddleButton extends Component {
 
     tick = () => {
         if (this.state.blockedAt) {
-            const leftSeconds = 10 - Math.floor((new Date().getTime() - this.state.blockedAt.getTime()) / 1000);
+            const leftSeconds = 60 - Math.floor((new Date().getTime() - this.state.blockedAt.getTime()) / 1000);
 
             if (leftSeconds <= 0) {
                 this.setState({blocked: false, blockedSecondsLeft: 0, blockedAt: null, triesLeft: 3});

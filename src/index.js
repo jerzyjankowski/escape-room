@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'http://192.168.0.12:3031';
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
