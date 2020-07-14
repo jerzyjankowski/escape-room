@@ -3,16 +3,11 @@ import Coin from "../../components/Coin/Coin";
 import RiddleButton from "../../components/RiddleButton/RiddleButton";
 
 
-class RiddleFour extends Component {
+class RiddleCoins extends Component {
 
     state = {
         solution: [0, 0, 0, 0, 0, 0]
     };
-
-    constructor(props) {
-        super(props);
-
-    }
 
     coinChangedHandler = (index, sideNumber) => {
         const solution = this.state.solution.slice();
@@ -24,7 +19,7 @@ class RiddleFour extends Component {
         const coins = [];
         for (let i = 0; i < this.props.coins; i++) {
             const backgroundImage = this.props.backgroundImages && this.props.backgroundImages[i] ? this.props.backgroundImages[i] : null;
-            coins.push(<Coin options={this.props.options} backgroundImage={backgroundImage} changed={(sideNumber) => this.coinChangedHandler(i, sideNumber)}/>);
+            coins.push(<Coin key={i} options={this.props.options} backgroundImage={backgroundImage} changed={(sideNumber) => this.coinChangedHandler(i, sideNumber)}/>);
         }
         return (
             <div className="Riddle">
@@ -40,7 +35,7 @@ class RiddleFour extends Component {
                 {
                     this.props.image &&
                     <div>
-                        <img style={{maxHeight: '240px', borderRadius: '12px'}} src={`/images/${this.props.image}`}/>
+                        <img alt='riddle hint' style={{maxHeight: '240px', borderRadius: '12px'}} src={`/images/${this.props.image}`}/>
                     </div>
                 }
                 <div className="coins">
@@ -55,4 +50,4 @@ class RiddleFour extends Component {
     }
 }
 
-export default RiddleFour;
+export default RiddleCoins;
