@@ -22,7 +22,7 @@ class RiddleCoins extends Component {
             coins.push(<Coin key={i} options={this.props.options} backgroundImage={backgroundImage} changed={(sideNumber) => this.coinChangedHandler(i, sideNumber)}/>);
         }
         return (
-            <div className="Riddle">
+            <div className="Riddle" style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 {
                     this.props.music &&
                     <div>
@@ -38,9 +38,9 @@ class RiddleCoins extends Component {
                         <img alt='riddle hint' style={{maxHeight: '240px', borderRadius: '12px'}} src={`/images/${this.props.image}`}/>
                     </div>
                 }
-                <div className="coins">
-                    {coins}
-                </div>
+                    <div className="coins" style={{maxWidth: `${coins.length * 250}px`, minWidth: `${coins.length * 180}px`, width: '100%', margin: '64px auto'}}>
+                        {coins}
+                    </div>
                 {
                     this.props.coins > 0 &&
                     <RiddleButton solution={this.state.solution}/>

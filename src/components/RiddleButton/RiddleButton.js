@@ -16,8 +16,6 @@ class RiddleButton extends Component {
     componentDidMount() {
         axios.get('/status')
             .then(response => {
-                console.log('GET /status:');
-                console.log(response);
                 this.setState({
                     triesLeft: response.data.triesLeft,
                     blocked: response.data.blocked,
