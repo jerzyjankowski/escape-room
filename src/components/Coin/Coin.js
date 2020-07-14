@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./Coin.css";
-
+import { Subject, zip } from 'rxjs'
 
 class Coin extends Component {
 
@@ -8,7 +8,24 @@ class Coin extends Component {
         coinRotate: 0,
         coinRotateStyle: 'rotateY(0deg)',
         currentSideNumber: 0,
+        flips: [],
+        clickSubject$: new Subject(),
+        readyToFlipSubject$: new Subject()
     };
+
+    componentDidMount() {
+        zip(this.state.clickSubject$, this.state.readyToFlipSubject$).subscribe((flipTo) => {
+            console.log('got event from subject - ' + flipTo);
+            this.flipCoinHandler();
+            setTimeout(() => this.state.readyToFlipSubject$.next(), 450);
+        });
+        this.state.readyToFlipSubject$.next();
+    }
+
+    coinClickHandler = (event, flipTo) => {
+        event.preventDefault();
+        this.state.clickSubject$.next(flipTo);
+    }
 
     flipCoinHandler = () => {
         const rotation = this.state.coinRotate + 180;
@@ -41,7 +58,10 @@ class Coin extends Component {
             </div>
         );
         return (
-            <div className='Coin' onClick={this.flipCoinHandler} style={{backgroundImage: this.props.backgroundImage ? `url("/images/${this.props.backgroundImage}")` : "none"}}>
+            <div className='Coin'
+                 onClick={(event) => this.coinClickHandler(event, 'next')}
+                 onContextMenu={(event) => this.coinClickHandler(event, 'previous')}
+                 style={{backgroundImage: this.props.backgroundImage ? `url("/images/${this.props.backgroundImage}")` : "none"}}>
                 {sides}
             </div>
 
